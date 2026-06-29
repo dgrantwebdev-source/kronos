@@ -1,0 +1,167 @@
+[
+  {
+    "name": "WebScraper Pro",
+    "slug": "webscraper-pro",
+    "description": "Production-grade web scraping agent. Extracts structured data from any URL. Supports pagination, auth, and JavaScript rendering.",
+    "capabilities": [
+      {
+        "name": "scrape_url",
+        "description": "Scrape a URL and return structured content",
+        "category": "data-extraction",
+        "tags": ["web", "scraping", "data"],
+        "mcp_type": "tool",
+        "mcp_schema": {
+          "name": "scrape_url",
+          "description": "Extract structured content from a URL",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "url": { "type": "string", "description": "The URL to scrape" },
+              "format": { "type": "string", "enum": ["markdown", "json", "text"], "description": "Output format" }
+            },
+            "required": ["url"]
+          }
+        },
+        "endpoint_url": "https://webscraper-pro.example.com/mcp",
+        "price_per_call": 5
+      }
+    ]
+  },
+  {
+    "name": "CodeReview Bot",
+    "slug": "codereview-bot",
+    "description": "Automated code review agent. Analyzes pull requests, finds bugs, suggests improvements, and enforces style guidelines.",
+    "capabilities": [
+      {
+        "name": "review_code",
+        "description": "Review a code diff or file for issues",
+        "category": "developer-tools",
+        "tags": ["code", "review", "linting"],
+        "mcp_type": "tool",
+        "mcp_schema": {
+          "name": "review_code",
+          "description": "Review code and return findings",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "code": { "type": "string", "description": "The code to review" },
+              "language": { "type": "string", "description": "Programming language" }
+            },
+            "required": ["code"]
+          }
+        },
+        "endpoint_url": "https://codereview-bot.example.com/mcp",
+        "price_per_call": 10
+      }
+    ]
+  },
+  {
+    "name": "EmailGenius",
+    "slug": "email-genius",
+    "description": "Smart email composition and management agent. Drafts, replies, summarizes, and organizes email threads.",
+    "capabilities": [
+      {
+        "name": "draft_email",
+        "description": "Draft an email based on context and instructions",
+        "category": "communication",
+        "tags": ["email", "drafting", "communication"],
+        "mcp_type": "tool",
+        "mcp_schema": {
+          "name": "draft_email",
+          "description": "Draft a professional email",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "to": { "type": "string", "description": "Recipient email" },
+              "subject": { "type": "string", "description": "Email subject" },
+              "context": { "type": "string", "description": "Context for the email" },
+              "tone": { "type": "string", "enum": ["professional", "casual", "urgent"] }
+            },
+            "required": ["to", "subject", "context"]
+          }
+        },
+        "endpoint_url": "https://emailgenius.example.com/mcp",
+        "price_per_call": 3
+      },
+      {
+        "name": "summarize_thread",
+        "description": "Summarize an email thread",
+        "category": "communication",
+        "tags": ["email", "summarization"],
+        "mcp_type": "tool",
+        "mcp_schema": {
+          "name": "summarize_thread",
+          "description": "Summarize an email thread",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "thread": { "type": "string", "description": "The email thread content" },
+              "max_points": { "type": "number", "description": "Max bullet points" }
+            },
+            "required": ["thread"]
+          }
+        },
+        "endpoint_url": "https://emailgenius.example.com/mcp",
+        "price_per_call": 2
+      }
+    ]
+  },
+  {
+    "name": "DataViz Agent",
+    "slug": "dataviz-agent",
+    "description": "Creates beautiful data visualizations from raw data. Supports charts, graphs, dashboards, and exports.",
+    "capabilities": [
+      {
+        "name": "create_chart",
+        "description": "Generate a chart from data",
+        "category": "data-analysis",
+        "tags": ["visualization", "charts", "data"],
+        "mcp_type": "tool",
+        "mcp_schema": {
+          "name": "create_chart",
+          "description": "Create a chart from input data",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "data": { "type": "object", "description": "The data to visualize" },
+              "chart_type": { "type": "string", "enum": ["bar", "line", "pie", "scatter"] },
+              "title": { "type": "string", "description": "Chart title" }
+            },
+            "required": ["data", "chart_type"]
+          }
+        },
+        "endpoint_url": "https://dataviz-agent.example.com/mcp",
+        "price_per_call": 8
+      }
+    ]
+  },
+  {
+    "name": "Translation Hub",
+    "slug": "translation-hub",
+    "description": "Multi-language translation agent supporting 100+ languages with context-aware translations.",
+    "capabilities": [
+      {
+        "name": "translate_text",
+        "description": "Translate text between languages",
+        "category": "language",
+        "tags": ["translation", "language", "i18n"],
+        "mcp_type": "tool",
+        "mcp_schema": {
+          "name": "translate_text",
+          "description": "Translate text to target language",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "text": { "type": "string", "description": "Text to translate" },
+              "source_lang": { "type": "string", "description": "Source language code" },
+              "target_lang": { "type": "string", "description": "Target language code" }
+            },
+            "required": ["text", "target_lang"]
+          }
+        },
+        "endpoint_url": "https://translation-hub.example.com/mcp",
+        "price_per_call": 2
+      }
+    ]
+  }
+]
