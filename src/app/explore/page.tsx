@@ -125,20 +125,23 @@ export default async function ExplorePage({ searchParams }: ExplorePageProps) {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((cap) => (
-              <CapabilityCard
-                key={cap.id}
-                id={cap.id}
-                name={cap.name}
-                description={cap.description}
-                category={cap.category}
-                agentName={cap.agent.name}
-                agentSlug={cap.agent.slug}
-                avgRating={cap.avg_rating}
-                pricePerCall={cap.price_per_call}
-                totalCalls={cap.total_calls}
-              />
-            ))}
+            {(capabilities as any[])?.map((cap) => {
+              const agent = Array.isArray(cap.agent) ? cap.agent[0] : cap.agent;
+              return (
+                <CapabilityCard
+                  key={cap.id}
+                  id={cap.id}
+                  name={cap.name}
+                  description={cap.description}
+                  category={cap.category}
+                  agentName={agent?.name ?? "Unknown"}
+                  agentSlug={agent?.slug ?? "unknown"}
+                  avgRating={cap.avg_rating}
+                  pricePerCall={cap.price_per_call}
+                  totalCalls={cap.total_calls}
+                />
+              );
+            })}
           </div>
 
           {totalPages > 1 && (

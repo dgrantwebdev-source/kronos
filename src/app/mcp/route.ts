@@ -68,8 +68,8 @@ export async function POST(request: NextRequest) {
   }
 
   const bodyValidation = validateMcpRequestBody(body);
-  if (!bodyValidation.success) {
-    return mcpError(null, MCP_ERRORS.INVALID_REQUEST.code, bodyValidation.error!);
+  if (!bodyValidation.success || !bodyValidation.data) {
+    return mcpError(null, MCP_ERRORS.INVALID_REQUEST.code, bodyValidation.error ?? "Invalid request body");
   }
 
   const { id, method, params } = bodyValidation.data;

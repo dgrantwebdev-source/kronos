@@ -189,12 +189,12 @@ export default async function CapabilityPage({
           <p className="text-sm text-zinc-500">No reviews yet.</p>
         ) : (
           <div className="space-y-4">
-            {reviews.map((review) => (
+            {reviews.map((review: any) => (
               <div key={review.id} className="card">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <span className="text-sm font-medium text-zinc-200">
-                      {review.agent.name}
+                      {Array.isArray(review.agent) ? review.agent[0]?.name : review.agent?.name}
                     </span>
                     <span className="text-yellow-400 text-sm">
                       {formatRating(review.rating)}
