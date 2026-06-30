@@ -1,6 +1,7 @@
 name = "kronos"
 main = ".open-next/worker.js"
-compatibility_date = "2024-09-23"
+compatibility_date = "2026-06-01"
+compatibility_flags = ["nodejs_compat"]
 
 # Environment variables
 [vars]
@@ -11,6 +12,8 @@ NODE_VERSION = "18"
 # SUPABASE_ANON_KEY
 # SUPABASE_SERVICE_ROLE_KEY
 # KRONOS_API_KEY_PREFIX
+
+workers_dev = true
 
 [[d1_databases]]
 binding = "DB"
